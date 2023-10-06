@@ -1,6 +1,8 @@
 import os
 import glob
 import threading
+from pprint import pprint
+
 import grpc
 import frequencyCalculator_pb2_grpc
 import frequencyCalculator_pb2
@@ -67,7 +69,7 @@ def run():
 
     sorted_result = dict(sorted(combined_result.items(), key=lambda item: item[1], reverse=True))
 
-    print(f"Sorted Combined Result: {sorted_result}")
+    pprint(f"Sorted Combined Result: {sorted_result}", width=180)
 
 if __name__ == '__main__':
     logging.basicConfig()
