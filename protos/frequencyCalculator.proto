@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+// The greeting service definition.
+service frequencyCalculator {
+    rpc Calculate (Text) returns (KeyPairs);
+    rpc Combine (KeyPairs) returns (KeyPairs);
+}
+
+message Text {
+    string input = 1;
+}
+
+message KeyPairs {
+    repeated KeyPair pair = 1;
+}
+
+message KeyPair {
+    string word = 1;
+    int32 count = 2;
+}
